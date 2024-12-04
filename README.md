@@ -45,34 +45,3 @@ Each folder corresponds to a specific year of Advent of Code (e.g., `2024`, `202
 
 Happy Coding. 
 
-
-
-1. Utilization Frequency (Scale 1-5)
-1: Rarely used
-3: Moderately used
-5: Frequently used
-2. Strategic Importance (Scale 1-5)
-1: Low importance
-3: Moderate importance
-5: High importance
-3. Risk of Obsolescence (Scale 1-5)
-1: High risk
-3: Moderate risk
-5: Low risk
-4. Resource Requirement (Scale 1-5)
-1: Extensive resources
-3: Moderate resources
-5: Minimal resources
-
-
-social loin - 5513
-example code for preprocessig data and ploting - 1331
-plugins for standard software - 3311
-ML processing power - 1311
-template for best practices - 4313
-MLOps template - 1331
-monitoring - 5555
-ways of working - 3333
-agent template - 3553
-LLM testing - 3131
-
