@@ -1,4 +1,5 @@
 use std::fs;
+use std::path::Path;
 
 fn is_sequence_safe(sequence: &[i32]) -> bool {
     let is_increasing = sequence.windows(2).all(|w| w[0] < w[1]);
@@ -44,8 +45,11 @@ fn is_report_safe(report: &str) -> bool {
 }
 
 fn read_lines() -> Vec<String> {
-    let root_dir = std::env::current_dir().expect("Failed to get current directory");
-    let file_path = root_dir.join("data.txt");
+    let current_file = Path::new(file!());
+    let current_dir = current_file
+        .parent()
+        .expect("Failed to get parent directory");
+    let file_path = current_dir.join("data.txt");
 
     fs::read_to_string(file_path)
         .expect("Failed to read file")

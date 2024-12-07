@@ -1,4 +1,5 @@
 use std::fs;
+use std::path::Path;
 
 fn is_level_valid(level: &[String]) -> bool {
     // strings to integers
@@ -20,22 +21,23 @@ fn is_level_valid(level: &[String]) -> bool {
     })
 }
 
-fn read_lines() -> Result<Vec<String>, std::io::Error> {
-    let root_dir = std::env::current_dir()?;
-    let file_path = root_dir.join("data.txt");
+fn read_lines() -> Vec<String> {
+    let current_file = Path::new(file!());
+    let current_dir = current_file
+        .parent()
+        .expect("Failed to get parent directory");
+    let file_path = current_dir.join("data.txt");
 
     fs::read_to_string(file_path)
-        .map(|contents|
-            contents
-                .lines()
-                .map(|line| line.to_string())
-                .filter(|line| !line.is_empty())
-                .collect()
-        )
+        .expect("Failed to read file")
+        .lines()
+        .map(|line| line.to_string())
+        .filter(|line| !line.is_empty())
+        .collect()
 }
 
 fn main() -> Result<(), Box<dyn std::error::Error>> {
-    let lines = read_lines()?;
+    let lines = read_lines();
 
     let report_count = lines
         .iter()
