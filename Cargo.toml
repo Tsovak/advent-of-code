@@ -67,3 +67,35 @@ path = "src/2024/day07/2/main.rs"
 [[bin]]
 name = "aoc-2024-day8-1"
 path = "src/2024/day08/1/main.rs"
+
+[[bin]]
+name = "aoc-2024-day8-2"
+path = "src/2024/day08/2/main.rs"
+
+[[bin]]
+name = "aoc-2024-day9-1"
+path = "src/2024/day09/1/main.rs"
+
+[[bin]]
+name = "aoc-2024-day9-2"
+path = "src/2024/day09/2/main.rs"
+
+[[bin]]
+name = "aoc-2024-day10-1"
+path = "src/2024/day10/1/main.rs"
+
+[[bin]]
+name = "aoc-2024-day10-2"
+path = "src/2024/day10/2/main.rs"
+
+[[bin]]
+name = "aoc-2024-day11-1"
+path = "src/2024/day11/1/main.rs"
+
+[[bin]]
+name = "aoc-2024-day11-2"
+path = "src/2024/day11/2/main.rs"
+
+[[bin]]
+name = "aoc-2024-day12-1"
+path = "src/2024/day12/1/main.rs"
