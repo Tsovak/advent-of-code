@@ -38,6 +38,7 @@ def find_easter_egg_time(robots: list[tuple[tuple[int, int], tuple[int, int]]],
                          max_duration: int = 1_000_000) -> int:
     max_neighbors = 0
     easter_egg_time = -1
+    last_positions = None
 
     for duration in range(max_duration):
         positions = simulate_robots(robots, duration, width, height)
@@ -54,21 +55,19 @@ def find_easter_egg_time(robots: list[tuple[tuple[int, int], tuple[int, int]]],
         if neighbors_count > max_neighbors:
             max_neighbors = neighbors_count
             easter_egg_time = duration
-
-            if duration % 1000 == 0 or neighbors_count > width * height * 0.3:
-                matrix = [[0] * width for _ in range(height)]
-                for x, y in positions:
-                    matrix[y][x] += 1
-
-                print(f"time: {duration}")
-                print(f"neighbors: {neighbors_count}")
-                for row in matrix:
-                    print(''.join(['#' if x else '.' for x in row]))
-                print()
+            last_positions = positions
 
         if neighbors_count > width * height * 0.3:
             return duration
 
+    # print xs tree
+    matrix = [[0] * width for _ in range(height)]
+    for x, y in last_positions:
+        matrix[y][x] += 1
+
+    for row in matrix:
+        print(''.join(['#' if x else '.' for x in row]))
+    print()
     return easter_egg_time
 
 
